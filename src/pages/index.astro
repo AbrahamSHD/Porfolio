@@ -12,12 +12,13 @@ import Projects from '../components/Projects.astro';
 import Tools from '../components/icons/Tools.astro';
 import User from '../components/icons/User.astro';
 
+// import NestJs from '../components/icons/technologies/NestJs.astro';
 import Css from '../components/icons/technologies/Css.astro';
 import Docker from '../components/icons/technologies/Docker.astro';
 import Html from '../components/icons/technologies/Html.astro'
 import Javascript from '../components/icons/technologies/Javascript.astro';
+import Jest from '../components/icons/technologies/Jest.astro';
 import Mongo from '../components/icons/technologies/Mongo.astro';
-import NestJs from '../components/icons/technologies/NestJs.astro';
 import Node from '../components/icons/technologies/Node.astro';
 import Postgres from '../components/icons/technologies/Postgres.astro';
 import Prisma from '../components/icons/technologies/Prisma.astro';
@@ -34,7 +35,7 @@ import Vite from '../components/icons/technologies/Vite.astro';
 
 		<SectionContainer class="py-44 pb-24 justify-center items-center">
 
-			<img class="size-16 lg:size-20 p-1 mb-4 rounded-full ring-2 ring-red-600" src="../../public/AbrahamPhoto.jpg" 
+			<img class="size-16 lg:size-20 p-1 mb-4 rounded-full ring-2 ring-red-600" src="/AbrahamPhoto.jpg" 
 			alt="abrahamHC photo">
 			
 			<h1 class=" text-white text-3xl md:text-4xl lg:text-5xl font-bold flex flex-row gap-x-4 pb-6 lg:pb-10 ">
@@ -89,7 +90,7 @@ import Vite from '../components/icons/technologies/Vite.astro';
 				<p class="text-pretty text-gray-600 dark:text-gray-300">Estoy comprometido con la excelencia en todo lo que hago, buscando constantemente mejorar y superar los desafíos que se presenten en el camino hacia la realización de mi visión.<strong class="text-amber-400"> Mi objetivo como programador es utilizar mi pasión por la tecnología para crear un impacto positivo en el mundo.</strong></p>
 			</section>
 
-			<img class="rounded h-72 self-center p-1 mb-4 ring-4 ring-gray-600" src="../../public/AbrahamPhoto.jpg" alt="Foto de perfil de Abraham">
+			<img class="rounded h-72 self-center p-1 mb-4 ring-4 ring-gray-600" src="/AbrahamPhoto.jpg" alt="Foto de perfil de Abraham">
 
 		</SectionContainer>
 
@@ -103,7 +104,6 @@ import Vite from '../components/icons/technologies/Vite.astro';
 			</section>
 
 			<SectionContainer class="grid grid-cols-7 md:grid-cols-8 lg:grid-cols-11 gap-4 justify-center">
-			<!-- <SectionContainer class="flex flex-row gap-4"> -->
 
 					<SkillContainer class="flex justify-center items-center bg-slate-400/50 size-14 max-w-16 max-h-16 rounded">
 						<Html class="rounded size-10 hover:size-14 transition-all duration-500 sm:h-full md:scale-110 md:group-hover:scale-105"/>	
@@ -145,8 +145,12 @@ import Vite from '../components/icons/technologies/Vite.astro';
 						<Node class=" size-10 hover:size-14 transition-all duration-500 sm:h-full md:scale-110 md:group-hover:scale-105"/>
 					</SkillContainer>
 
-					<SkillContainer class="flex justify-center items-center bg-slate-400/50 size-14 max-w-16 max-h-16 rounded">
+					<!-- <SkillContainer class="flex justify-center items-center bg-slate-400/50 size-14 max-w-16 max-h-16 rounded">
 						<NestJs class="size-10 hover:size-14 transition-all duration-500 sm:h-full md:scale-110 md:group-hover:scale-105"/>
+					</SkillContainer> -->
+
+					<SkillContainer class="flex justify-center items-center bg-slate-400/50 size-14 max-w-16 max-h-16 rounded">
+						<Jest class="size-10 hover:size-14 transition-all duration-500 sm:h-full md:scale-110 md:group-hover:scale-105"/>
 					</SkillContainer>
 
 					<SkillContainer class="flex justify-center items-center bg-slate-400/50 size-14 max-w-16 max-h-16 rounded">

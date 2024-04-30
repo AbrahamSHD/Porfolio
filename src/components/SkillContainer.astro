@@ -1,0 +1,7 @@
+---
+const { class: className } = Astro.props
+---
+
+<article class={`${ className } size-32 mx-auto`}>
+    <slot/>
+</article>

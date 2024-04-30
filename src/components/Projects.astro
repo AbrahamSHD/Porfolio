@@ -1,0 +1,140 @@
+---
+import GitHub from './icons/GitHub.astro'
+import Javascript from './icons/technologies/Javascript.astro'
+import Link from './icons/Link.astro'
+import LinkButton from './icons/LinkButton.astro'
+import Mongo from './icons/technologies/Mongo.astro'
+import NestJs from './icons/technologies/NestJs.astro'
+import Node from './icons/technologies/Node.astro'
+import Postgres from './icons/technologies/Postgres.astro'
+import Prisma from './icons/technologies/Prisma.astro'
+import Typescript from './icons/technologies/Typescript.astro'
+import Vite from './icons/technologies/Vite.astro'
+
+const TAGS = {
+
+    JAVASCRIPT: {
+        name: "Javascript",
+        class: " bg-[#f0db4f] text-black ",
+        icon: Javascript
+    },
+
+    TYPESCRIPT: {
+        name:"Typescript",
+        class: " bg-[#3178C6] text-white ",
+        icon: Typescript
+    },
+
+    NESTJS: {
+        name:"NestJs",
+        class: " bg-[#e0234e] text-white ",
+        icon: NestJs
+    },
+
+    NODE: {
+      name: "Node",
+      class: " bg-[#41873F] text-white ",
+      icon: Node
+    },
+    
+    MONGODB: {
+        name:"MongoDB",
+        class: " bg-[#01EC64] text-white ",
+        icon: Mongo
+    
+    },
+
+    VITE: {
+        name:"Vite",
+        class: " bg-gradient-to-r from-purple-500 to-blue-500 text-white ",
+        icon: Vite
+    
+    },
+    
+    POSTGRESQL: {
+        name:"PostgreSQL",
+        class: " bg-[#336791] text-white ",
+        icon: Postgres
+    
+    },
+    
+    PRISMA: {
+        name:"Prisma",
+        class: " bg-[#232323] text-white ",
+        icon: Prisma
+    },
+
+}
+
+const PROJECTS = [
+  {
+    title: "Breaking Bad Api - Frases",
+    description:
+      "Página la cual se conecta a la api de la serie para mostrar una frase y su autor respectivo, también cuenta con un botón para mostrar la frase tantas veces como se desee",
+    link: "https://frasesdebrakingbad.netlify.app/",
+    github: "https://github.com/AbrahamSHD/BreakingBad-Frases",
+    image: "../../public/projects/BreakingBadFrases.jpg",
+    tags: [TAGS.JAVASCRIPT, TAGS.NODE, TAGS.VITE],
+  },
+  {
+    title: "BlackJack - Juego hecho con JavaScript y Vite",
+    description:
+      "Juego planeado para una persona, compites con la computadora, gana el primnero al llegar a 24 o estar lo más cerca posible y pierde el primero en pasar de 24 toda la lógica fué realizada sólamente cons Javascript y Vite",
+    link: "https://juegoblackjack-asdh.netlify.app/",
+    github: "https://github.com/AbrahamSHD/js-vite-blackjack",
+    image: "../../public/projects/BlackJackJuego.jpg",
+    tags: [TAGS.JAVASCRIPT, TAGS.NODE, TAGS.VITE],
+  },
+]
+
+---
+
+<div class="flex flex-col gap-y-16">
+    {
+      PROJECTS.map(({ image, title, description, tags, link, github }) => (
+      <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
+    <div class="w-full md:w-1/2">
+      <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
+        <img alt="Recién llegado vs 5 años en Nueva Zelanda" class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105" loading="lazy" src={image} />
+      </div>
+    </div>
+
+    <div class="w-full md:w-1/2 md:max-w-lg">
+      <h3 class="text-2xl font-bold text-gray-800 dark:text-gray-100">
+        {title}
+      </h3>
+      <div class="flex flex-wrap mt-2">
+        <ul class="flex flex-row mb-2 gap-x-2">
+            {tags.map((tag) => (
+              <li>
+                <span
+                  class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 `}
+                >
+                  <tag.icon class="size-4" />
+                  {tag.name}
+                </span>
+              </li>
+            ))}
+          </ul>
+
+        <div class="mt-2 text-gray-700 dark:text-gray-400">{description}</div>
+        <footer class="flex items-end justify-start mt-4 gap-x-4">
+            {github && (
+              <LinkButton href={github}>
+                <GitHub class="size-6" />
+                Code
+              </LinkButton>
+            )}
+            {link && (
+              <LinkButton href={link}>
+                <Link class="size-4" />
+                Preview
+              </LinkButton>
+            )}
+          </footer>
+      </div>
+    </div>
+  </article>
+      ))
+    }
+  </div>

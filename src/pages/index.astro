@@ -1,0 +1,161 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SectionContainer from '../components/SectionContainer.astro';
+import SkillContainer from '../components/SkillContainer.astro';
+import SocialPill from '../components/icons/SocialPill.astro';
+
+import CodeIcon from '../components/icons/CodeIcon.astro';
+import GitHubIcon from '../components/icons/GitHub.astro'
+import LinkedInIcon from '../components/icons/LinkedIn.astro'
+import MailIcon from '../components/icons/Mail.astro'
+import Projects from '../components/Projects.astro';
+import Tools from '../components/icons/Tools.astro';
+import User from '../components/icons/User.astro';
+
+import Css from '../components/icons/technologies/Css.astro';
+import Docker from '../components/icons/technologies/Docker.astro';
+import Html from '../components/icons/technologies/Html.astro'
+import Javascript from '../components/icons/technologies/Javascript.astro';
+import Mongo from '../components/icons/technologies/Mongo.astro';
+import NestJs from '../components/icons/technologies/NestJs.astro';
+import Node from '../components/icons/technologies/Node.astro';
+import Postgres from '../components/icons/technologies/Postgres.astro';
+import Prisma from '../components/icons/technologies/Prisma.astro';
+import Tailwind from '../components/icons/technologies/Tailwind.astro';
+import Typescript from '../components/icons/technologies/Typescript.astro';
+import Vite from '../components/icons/technologies/Vite.astro';
+---
+
+<Layout 
+	title="Portfolio AbrahamHC - Desarrollador y Programador Web"
+	description="AbrahamHC es un apasionado desarrollador web con 1 año de experiencia en la creación de sitios web modernos, eficientes y atractivos. Cuenta con una amplia gama de tecnologías, incluyendo HTML, CSS, Tailwind, JavaScript, Typescript Node js, MongoDB, PostgreSQl y Nest js."	
+>
+	<main class="px-4">
+
+		<SectionContainer class="py-44 pb-24 justify-center items-center">
+
+			<img class="size-16 lg:size-20 p-1 mb-4 rounded-full ring-2 ring-red-600" src="../../public/AbrahamPhoto.jpg" 
+			alt="abrahamHC photo">
+			
+			<h1 class=" text-white text-3xl md:text-4xl lg:text-5xl font-bold flex flex-row gap-x-4 pb-6 lg:pb-10 ">
+				Hey, soy AbrahamHC
+			</h1>
+			<h2 class=" text-xl lg:text-2xl text-wrap opacity-80 mb-8 max-w-[700px]">
+				<span class=" text-yellow-400 font-bold ">Desarrollador Web Jr.</span> De México. Especializado en hacer Webs únicas
+			</h2>
+
+			<nav class=" flex gap-4 text-wrap ">
+				<SocialPill
+					href="https://linkedin.com/in/hernández-cano-abraham-14778621b"	>
+						<LinkedInIcon class=" size-4 md:size-6 "/>
+						LinkedIn
+				</SocialPill>
+				<SocialPill
+					href="https://github.com/AbrahamSHD">
+						<GitHubIcon class=" size-4 md:size-6 "/>
+						GitHub
+				</SocialPill>
+				<SocialPill
+					href="mailto:hernandez.c.abraham.00@gmail.com"
+					>
+					<MailIcon class=" size-6 "/>
+						hernandez.c.abraham.00@gmail.com
+				</SocialPill>
+			</nav>
+
+		</SectionContainer>
+
+		<SectionContainer id="proyectos">
+
+			<h2 class="text-2xl font-semibold mb-6 flex gap-x-3 items-center ">
+				<CodeIcon class="size-7" />
+				Proyectos
+			</h2>
+
+			<Projects/>
+
+		</SectionContainer>
+
+		<SectionContainer class="flex flex-row gap-8 content-center" id="sobre-mi">
+
+			<section>
+				<h2 class="text-2xl font-semibold mb-6 flex gap-x-3 items-center ">
+					<User class="size-7" />
+					Sobre mí
+				</h2>
+	
+				<p class="text-pretty text-gray-600 dark:text-gray-300">Me llamo Abraham Hernández. Empecé en la programación gracias a la preparatoria, donde tenía 15 años.<strong class="text-amber-400"> Actualmente estoy participando con amigos en un equipo desarrollo donde he ayudado con la programación del backend.</strong></p>
+				<p class="text-pretty text-gray-600 dark:text-gray-300">Mis habilidades las he desarrollado haciendo páginas como proyectos personales.<strong class="text-amber-400">Aunque no he tenido proyectos por los que haya obtenido remuneración sigo creciendo como programador a travéz de cursos y actividades</strong></p>
+				<p class="text-pretty text-gray-600 dark:text-gray-300">Estoy comprometido con la excelencia en todo lo que hago, buscando constantemente mejorar y superar los desafíos que se presenten en el camino hacia la realización de mi visión.<strong class="text-amber-400"> Mi objetivo como programador es utilizar mi pasión por la tecnología para crear un impacto positivo en el mundo.</strong></p>
+			</section>
+
+			<img class="rounded h-72 self-center p-1 mb-4 ring-4 ring-gray-600" src="../../public/AbrahamPhoto.jpg" alt="Foto de perfil de Abraham">
+
+		</SectionContainer>
+
+		<SectionContainer id="skills" class="flex flex-col h-28">
+
+			<section>
+				<h2 class="text-2xl font-semibold mb-6 flex gap-x-3 items-center ">
+					<Tools class="size-7" />
+					Skills
+				</h2>
+			</section>
+
+			<SectionContainer class="grid grid-cols-7 md:grid-cols-8 lg:grid-cols-11 gap-4 justify-center">
+			<!-- <SectionContainer class="flex flex-row gap-4"> -->
+
+					<SkillContainer class="flex justify-center items-center bg-slate-400/50 size-14 max-w-16 max-h-16 rounded">
+						<Html class="rounded size-10 hover:size-14 transition-all duration-500 sm:h-full md:scale-110 md:group-hover:scale-105"/>	
+					</SkillContainer>
+	
+					<SkillContainer class="flex justify-center items-center bg-slate-400/50 size-14 max-w-16 max-h-16 rounded">
+						<Css class="rounded size-10 hover:size-14 transition-all duration-500 sm:h-full md:scale-110 md:group-hover:scale-105"/>	
+					</SkillContainer>
+	
+					<SkillContainer class="flex justify-center items-center bg-slate-400/50 size-14 max-w-16 max-h-16 rounded">
+						<Tailwind class="w-10 hover:w-14 transition-all duration-500 md:scale-95 md:group-hover:scale-95"/>	
+					</SkillContainer>
+
+					<SkillContainer class="flex justify-center items-center bg-slate-400/50 size-14 max-w-16 max-h-16 rounded">
+						<Vite class="size-10 hover:size-14 transition-all duration-500 sm:h-full md:scale-110 md:group-hover:scale-105"/>
+					</SkillContainer>
+	
+					<SkillContainer class="flex justify-center items-center bg-slate-400/50 size-14 max-w-16 max-h-16 rounded">
+						<Typescript class="rounded size-10 hover:size-14 transition-all duration-500 sm:h-full md:scale-110 md:group-hover:scale-105"/>	
+					</SkillContainer>
+	
+					<SkillContainer class="flex justify-center items-center bg-slate-400/50 size-14 max-w-16 max-h-16 rounded">
+						<Javascript class="rounded size-10 hover:size-14 transition-all duration-500 sm:h-full md:scale-110 md:group-hover:scale-105"/>
+					</SkillContainer>
+	
+					<SkillContainer class="flex justify-center items-center bg-slate-400/50 size-14 max-w-16 max-h-16 rounded">
+						<Mongo class="h-10 hover:h-14 transition-all duration-500 sm:h-90 md:scale-95 md:group-hover:scale-95"/>
+					</SkillContainer>
+
+					<SkillContainer class="flex justify-center items-center bg-slate-400/50 size-14 max-w-16 max-h-16 rounded">
+						<Postgres class="rounded size-10 hover:size-14 transition-all duration-500 sm:h-full md:scale-110 md:group-hover:scale-105"/>
+					</SkillContainer>
+	
+					<SkillContainer class="flex justify-center items-center bg-slate-400/50 size-14 max-w-16 max-h-16 rounded">
+						<Prisma class="rounded size-10 hover:size-14 transition-all duration-500 sm:h-full md:scale-110 md:group-hover:scale-105"/>
+					</SkillContainer>
+	
+					<SkillContainer class="flex justify-center items-center bg-slate-400/50 size-14 max-w-16 max-h-16 rounded">
+						<Node class=" size-10 hover:size-14 transition-all duration-500 sm:h-full md:scale-110 md:group-hover:scale-105"/>
+					</SkillContainer>
+
+					<SkillContainer class="flex justify-center items-center bg-slate-400/50 size-14 max-w-16 max-h-16 rounded">
+						<NestJs class="size-10 hover:size-14 transition-all duration-500 sm:h-full md:scale-110 md:group-hover:scale-105"/>
+					</SkillContainer>
+
+					<SkillContainer class="flex justify-center items-center bg-slate-400/50 size-14 max-w-16 max-h-16 rounded">
+						<Docker class="size-10 hover:size-14 transition-all duration-500 sm:h-full md:scale-110 md:group-hover:scale-105"/>
+					</SkillContainer>
+
+			</SectionContainer>
+
+		</SectionContainer>
+
+	</main>
+</Layout>

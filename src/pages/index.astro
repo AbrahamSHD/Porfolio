@@ -77,7 +77,7 @@ import Vite from '../components/icons/technologies/Vite.astro';
 
 		</SectionContainer>
 
-		<SectionContainer class="flex flex-row gap-8 content-center" id="sobre-mi">
+		<SectionContainer class="flex flex-row sm:flex-col gap-8 content-center" id="sobre-mi">
 
 			<section>
 				<h2 class="text-2xl font-semibold mb-6 flex gap-x-3 items-center ">
@@ -94,7 +94,7 @@ import Vite from '../components/icons/technologies/Vite.astro';
 
 		</SectionContainer>
 
-		<SectionContainer id="skills" class="flex flex-col h-28">
+		<SectionContainer id="skills" class="box-border flex sm:flex-col sm:h-40 md:h-64 lg:h-72 sm:mb-32">
 
 			<section>
 				<h2 class="text-2xl font-semibold mb-6 flex gap-x-3 items-center ">
@@ -103,8 +103,9 @@ import Vite from '../components/icons/technologies/Vite.astro';
 				</h2>
 			</section>
 
-			<SectionContainer class="grid grid-cols-7 md:grid-cols-8 lg:grid-cols-11 gap-4 justify-center">
+			<SectionContainer class="flex flex-row sm:flex-rows justify-center gap-6">
 
+				<section class="grid sm:grid-cols-4 md:grid-cols-4 lg:grid-cols-5 gap-4 justify-evenly w-[50%]">
 					<SkillContainer class="flex justify-center items-center bg-slate-400/50 size-14 max-w-16 max-h-16 rounded">
 						<Html class="rounded size-10 hover:size-14 transition-all duration-500 sm:h-full md:scale-110 md:group-hover:scale-105"/>	
 					</SkillContainer>
@@ -116,7 +117,6 @@ import Vite from '../components/icons/technologies/Vite.astro';
 					<SkillContainer class="flex justify-center items-center bg-slate-400/50 size-14 max-w-16 max-h-16 rounded">
 						<Tailwind class="w-10 hover:w-14 transition-all duration-500 md:scale-95 md:group-hover:scale-95"/>	
 					</SkillContainer>
-
 					<SkillContainer class="flex justify-center items-center bg-slate-400/50 size-14 max-w-16 max-h-16 rounded">
 						<Vite class="size-10 hover:size-14 transition-all duration-500 sm:h-full md:scale-110 md:group-hover:scale-105"/>
 					</SkillContainer>
@@ -132,7 +132,6 @@ import Vite from '../components/icons/technologies/Vite.astro';
 					<SkillContainer class="flex justify-center items-center bg-slate-400/50 size-14 max-w-16 max-h-16 rounded">
 						<Mongo class="h-10 hover:h-14 transition-all duration-500 sm:h-90 md:scale-95 md:group-hover:scale-95"/>
 					</SkillContainer>
-
 					<SkillContainer class="flex justify-center items-center bg-slate-400/50 size-14 max-w-16 max-h-16 rounded">
 						<Postgres class="rounded size-10 hover:size-14 transition-all duration-500 sm:h-full md:scale-110 md:group-hover:scale-105"/>
 					</SkillContainer>
@@ -144,18 +143,24 @@ import Vite from '../components/icons/technologies/Vite.astro';
 					<SkillContainer class="flex justify-center items-center bg-slate-400/50 size-14 max-w-16 max-h-16 rounded">
 						<Node class=" size-10 hover:size-14 transition-all duration-500 sm:h-full md:scale-110 md:group-hover:scale-105"/>
 					</SkillContainer>
-
 					<!-- <SkillContainer class="flex justify-center items-center bg-slate-400/50 size-14 max-w-16 max-h-16 rounded">
 						<NestJs class="size-10 hover:size-14 transition-all duration-500 sm:h-full md:scale-110 md:group-hover:scale-105"/>
 					</SkillContainer> -->
-
 					<SkillContainer class="flex justify-center items-center bg-slate-400/50 size-14 max-w-16 max-h-16 rounded">
 						<Jest class="size-10 hover:size-14 transition-all duration-500 sm:h-full md:scale-110 md:group-hover:scale-105"/>
 					</SkillContainer>
-
 					<SkillContainer class="flex justify-center items-center bg-slate-400/50 size-14 max-w-16 max-h-16 rounded">
 						<Docker class="size-10 hover:size-14 transition-all duration-500 sm:h-full md:scale-110 md:group-hover:scale-105"/>
 					</SkillContainer>
+				</section>
+
+				<section class="w-[50%] ml-4 flex flex-col gap-6">
+
+					<p class="bg-gray-700/50 flex text-center p-4 rounded w-auto sm:text-sm md:text-base lg:text-lg rotate-1">Competencias en gestión de proyectos ágiles y colaboración en equipo</p>
+					<p class="bg-gray-700/50 flex text-center p-4 rounded w-auto sm:text-sm md:text-base lg:text-lg -rotate-2">Habilidad para resolver problemas algorítmicos utilizando Javascript y Node js.</p>
+					<p class="bg-gray-700/50 flex text-center p-4 rounded w-auto sm:text-sm md:text-base lg:text-lg rotate-1">Competencia en el diseño y optimización de bases de datos SQL y NoSQL.</p>
+
+				</section>
 
 			</SectionContainer>
 

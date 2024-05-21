@@ -1,5 +1,7 @@
 ---
 import GitHub from './icons/GitHub.astro'
+
+import Express from './icons/technologies/Express.astro'
 import Javascript from './icons/technologies/Javascript.astro'
 import Link from './icons/Link.astro'
 import LinkButton from './icons/LinkButton.astro'
@@ -12,6 +14,12 @@ import Typescript from './icons/technologies/Typescript.astro'
 import Vite from './icons/technologies/Vite.astro'
 
 const TAGS = {
+
+    EXPRESS: {
+        name: "Express",
+        class: " bg-[#fff5] text-white ",
+        icon: Express
+    },
 
     JAVASCRIPT: {
         name: "Javascript",
@@ -39,7 +47,7 @@ const TAGS = {
     
     MONGODB: {
         name:"MongoDB",
-        class: " bg-[#01EC64] text-white ",
+        class: " bg-[#fff9] text-black ",
         icon: Mongo
     
     },
@@ -67,6 +75,13 @@ const TAGS = {
 }
 
 const PROJECTS = [
+  {
+    title: 'API Store',
+    description: 'API desarrollada utilizando Express, MongoDB y Jwt, ofrece funcionalidades esenciales como registrode productos, categorias y un sistema de autenticaciónde usuarios para garantizar la seguridad de laplataforma. Además, permite el almacenamiento deimágenes, envío de correos electrónicos y encriptacióndde datos.',
+    github: 'https://github.com/AbrahamSHD/User-Store',
+    image: 'https://www.split.io/wp-content/uploads/Blog-2160x1080-Building-a-CRUD-API-with-Node-js-and-Express-1920x960.png',
+    tags: [ TAGS.EXPRESS, TAGS.NODE, TAGS.MONGODB, TAGS.TYPESCRIPT ],
+  },
   {
     title: "Breaking Bad Api - Frases",
     description:

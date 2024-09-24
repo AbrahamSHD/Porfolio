@@ -1,87 +1,26 @@
 ---
-import GitHub from "./icons/GitHub.astro";
-
-import Express from "./icons/technologies/Express.astro";
-import Javascript from "./icons/technologies/Javascript.astro";
-import Link from "./icons/Link.astro";
-import LinkButton from "./icons/LinkButton.astro";
-import Mongo from "./icons/technologies/Mongo.astro";
-import NestJs from "./icons/technologies/NestJs.astro";
-import Node from "./icons/technologies/Node.astro";
-import Postgres from "./icons/technologies/Postgres.astro";
-import Prisma from "./icons/technologies/Prisma.astro";
-import Typescript from "./icons/technologies/Typescript.astro";
-import Vite from "./icons/technologies/Vite.astro";
-import React from "./icons/technologies/React.astro";
-import Redux from "./icons/technologies/Redux.astro";
-
-const TAGS = {
-  EXPRESS: {
-    name: "Express",
-    class: " bg-[#fff5] text-white ",
-    icon: Express,
-  },
-
-  JAVASCRIPT: {
-    name: "Javascript",
-    class: " bg-[#f0db4f] text-black ",
-    icon: Javascript,
-  },
-
-  TYPESCRIPT: {
-    name: "Typescript",
-    class: " bg-[#3178C6] text-white ",
-    icon: Typescript,
-  },
-
-  NESTJS: {
-    name: "NestJs",
-    class: " bg-[#e0234e] text-white ",
-    icon: NestJs,
-  },
-
-  NODE: {
-    name: "Node",
-    class: " bg-[#41873F] text-white ",
-    icon: Node,
-  },
-
-  MONGODB: {
-    name: "MongoDB",
-    class: " bg-[#fff9] text-black ",
-    icon: Mongo,
-  },
-
-  VITE: {
-    name: "Vite",
-    class: " bg-gradient-to-r from-purple-500 to-blue-500 text-white ",
-    icon: Vite,
-  },
-
-  POSTGRESQL: {
-    name: "PostgreSQL",
-    class: " bg-[#336791] text-white ",
-    icon: Postgres,
-  },
-
-  PRISMA: {
-    name: "Prisma",
-    class: " bg-[#232323] text-white ",
-    icon: Prisma,
-  },
-  REACT: {
-    name: "React",
-    class: "bg-[#008fbd] text-white",
-    icon: React,
-  },
-  REDUX: {
-    name: "Redux",
-    class: "bg-gradient-to-r from-blue-500 to-purple-500 text-white",
-    icon: Redux,
-  }
-};
+import { GitHub, Link, LinkButton } from "../components";
+import { ICONS as TAGS } from "../utils/icons";
 
 const PROJECTS = [
+  {
+    title: "CyberMerch",
+    description:
+      "Desarrollo del backend pensado para una plataforma de comercio electrónico utilizando NestJS yPrismaORM. Implementación de control de acceso basado en roles para restringir operaciones CRUD deproductos a usuarios administradores. Integración y manejo de Swagger para la documentación de la API.",
+    github: "https://github.com/AbrahamSHD/CyberMerch",
+      image:
+      "https://www.tomray.dev/static/images/nestjs-prisma/nestjs-prisma.png",
+    tags: [TAGS.TYPESCRIPT, TAGS.NESTJS, TAGS.NODE, TAGS.POSTGRESQL, TAGS.PRISMA],
+  },
+  {
+    title: "JournalApp - App de notas con React",
+    description:
+      "Es una aplicación construida con React y Redux que permite a los usuarios crear, editar y eliminar notas personales. Las notas se almacenan en Firebase. La aplicación incluye un sistema de autenticación para registrar y gestionar usuarios nuevos. Además, JournalApp se integra con Cloudinary para permitir la carga de archivos multimedia, como imágenes, que pueden ser adjuntadas a las notas.",
+    link: "https://journal-app-ahc.netlify.app/",
+    github: "https://github.com/AbrahamSHD/js-vite-blackjack",
+    image: "/projects/JournalApp.jpeg",
+    tags: [TAGS.JAVASCRIPT, TAGS.REACT, TAGS.VITE, TAGS.REDUX],
+  },
   {
     title: "API Store",
     description:
@@ -99,25 +38,6 @@ const PROJECTS = [
     image: "/projects/TicketFlow.jpg",
     tags: [TAGS.TYPESCRIPT, TAGS.NODE, TAGS.EXPRESS],
   },
-  {
-    title: "JournalApp - App de notas con React",
-    description:
-      "Es una aplicación construida con React y Redux que permite a los usuarios crear, editar y eliminar notas personales. Las notas se almacenan en Firebase. La aplicación incluye un sistema de autenticación para registrar y gestionar usuarios nuevos. Además, JournalApp se integra con Cloudinary para permitir la carga de archivos multimedia, como imágenes, que pueden ser adjuntadas a las notas.",
-    link: "https://juegoblackjack-asdh.netlify.app/",
-    github: "https://github.com/AbrahamSHD/js-vite-blackjack",
-    image: "/projects/JournalApp.jpeg",
-    tags: [TAGS.JAVASCRIPT, TAGS.REACT, TAGS.VITE, TAGS.REDUX],
-  },
-  {
-    title: "BlackJack - Juego hecho con JavaScript y Vite",
-    description:
-      "Juego planeado para una persona, compites con la computadora, gana el primnero al llegar a 24 o estar lo más cerca posible y pierde el primero en pasar de 24 toda la lógica fué realizada sólamente cons Javascript y Vite",
-    link: "https://juegoblackjack-asdh.netlify.app/",
-    github: "https://github.com/AbrahamSHD/js-vite-blackjack",
-    image: "/projects/BlackJackJuego.jpg",
-    tags: [TAGS.JAVASCRIPT, TAGS.NODE, TAGS.VITE],
-  },
-
 ];
 ---
 
@@ -141,7 +61,7 @@ const PROJECTS = [
             {title}
           </h3>
           <div class="flex flex-wrap mt-2">
-            <ul class="flex flex-row mb-2 gap-x-2">
+            <ul class="flex flex-row flex-wrap mb-2 gap-2">
               {tags.map((tag) => (
                 <li>
                   <span
@@ -177,3 +97,4 @@ const PROJECTS = [
     ))
   }
 </div>
+

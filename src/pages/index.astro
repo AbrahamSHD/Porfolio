@@ -1,16 +1,9 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import SectionContainer from "../components/SectionContainer.astro";
-import SkillContainer from "../components/SkillContainer.astro";
-import SocialPill from "../components/icons/SocialPill.astro";
 
-import CodeIcon from "../components/icons/CodeIcon.astro";
-import GitHubIcon from "../components/icons/GitHub.astro";
-import LinkedInIcon from "../components/icons/LinkedIn.astro";
-import MailIcon from "../components/icons/Mail.astro";
-import Projects from "../components/Projects.astro";
-import Tools from "../components/icons/Tools.astro";
-import User from "../components/icons/User.astro";
+import { SectionContainer, SkillContainer, Projects } from '../components'
+
+import { CodeIcon, GitHub, LinkedIn, Mail, Tools, User, SocialPill } from '../components/icons'
 
 // import NestJs from '../components/icons/technologies/NestJs.astro';
 import Css from "../components/icons/technologies/Css.astro";
@@ -56,15 +49,15 @@ import React from "../components/icons/technologies/React.astro";
         <SocialPill
           href="https://linkedin.com/in/hernández-cano-abraham-14778621b"
         >
-          <LinkedInIcon class="size-4 md:size-6" />
+          <LinkedIn class="size-4 md:size-6" />
           LinkedIn
         </SocialPill>
         <SocialPill href="https://github.com/AbrahamSHD">
-          <GitHubIcon class="size-4 md:size-6" />
+          <GitHub class="size-4 md:size-6" />
           GitHub
         </SocialPill>
         <SocialPill href="mailto:hernandez.c.abraham.00@gmail.com">
-          <MailIcon class="size-6" />
+          <Mail class="size-6" />
           hernandez.c.abraham.00@gmail.com
         </SocialPill>
       </nav>
@@ -92,13 +85,12 @@ import React from "../components/icons/technologies/React.astro";
         <p class="text-pretty text-gray-600 dark:text-gray-300">
           Me llamo Abraham Hernández. Empecé en la programación gracias a la
           preparatoria, donde tenía 15 años.<strong class="text-amber-400">
-            Actualmente estoy participando con amigos en un equipo desarrollo
-            donde he ayudado con la programación del backend.</strong
+            Actualmente estoy creciendo de manera autodidacta, creando proyectos en solitario desde el Forntend hasta el Backend.</strong
           >
         </p>
         <p class="text-pretty text-gray-600 dark:text-gray-300">
           Mis habilidades las he desarrollado haciendo páginas como proyectos
-          personales.<strong class="text-amber-400"
+          personales. <strong class="text-amber-400"
             >Aunque no he tenido proyectos por los que haya obtenido
             remuneración sigo creciendo como programador a travéz de cursos y
             actividades</strong
@@ -142,109 +134,8 @@ import React from "../components/icons/technologies/React.astro";
         <section
           class="flex flex-wrap gap-4 justify-evenly sm:w-[50%] md:w-[50%] lg:w-[50%]"
         >
-          <SkillContainer
-            class="flex justify-center items-center bg-slate-400/50 size-14 max-w-16 max-h-16 rounded"
-          >
-            <Html
-              class="rounded size-10 hover:size-14 transition-all duration-500 sm:h-full md:scale-110 md:group-hover:scale-105"
-            />
-          </SkillContainer>
+          <SkillContainer />
 
-          <SkillContainer
-            class="flex justify-center items-center bg-slate-400/50 size-14 max-w-16 max-h-16 rounded"
-          >
-            <Css
-              class="rounded size-10 hover:size-14 transition-all duration-500 sm:h-full md:scale-110 md:group-hover:scale-105"
-            />
-          </SkillContainer>
-
-          <SkillContainer
-            class="flex justify-center items-center bg-slate-400/50 size-14 max-w-16 max-h-16 rounded"
-          >
-            <Tailwind
-              class="w-10 hover:w-14 transition-all duration-500 md:scale-95 md:group-hover:scale-95"
-            />
-          </SkillContainer>
-
-          <SkillContainer
-            class="flex justify-center items-center bg-slate-400/50 size-14 max-w-16 max-h-16 rounded"
-          >
-            <Typescript
-              class="rounded size-10 hover:size-14 transition-all duration-500 sm:h-full md:scale-110 md:group-hover:scale-105"
-            />
-          </SkillContainer>
-
-          <SkillContainer
-            class="flex justify-center items-center bg-slate-400/50 size-14 max-w-16 max-h-16 rounded"
-          >
-            <Javascript
-              class="rounded size-10 hover:size-14 transition-all duration-500 sm:h-full md:scale-110 md:group-hover:scale-105"
-            />
-          </SkillContainer>
-
-          <SkillContainer
-            class="flex justify-center items-center bg-slate-400/50 size-14 max-w-16 max-h-16 rounded"
-          >
-            <Vite
-              class="size-10 hover:size-14 transition-all duration-500 sm:h-full md:scale-110 md:group-hover:scale-105"
-            />
-          </SkillContainer>
-
-          <SkillContainer
-            class="flex justify-center items-center bg-slate-400/50 size-14 max-w-16 max-h-16 rounded"
-          >
-            <Git
-              class="size-10 hover:size-14 transition-all duration-500 sm:h-full md:scale-110 md:group-hover:scale-105"
-            />
-          </SkillContainer>
-
-          <SkillContainer
-            class="flex justify-center items-center bg-slate-400/50 size-14 max-w-16 max-h-16 rounded"
-          >
-            <Mongo
-              class="h-10 hover:h-14 transition-all duration-500 sm:h-90 md:scale-95 md:group-hover:scale-95"
-            />
-          </SkillContainer>
-          <SkillContainer
-            class="flex justify-center items-center bg-slate-400/50 size-14 max-w-16 max-h-16 rounded"
-          >
-            <Postgres
-              class="rounded size-10 hover:size-14 transition-all duration-500 sm:h-full md:scale-110 md:group-hover:scale-105"
-            />
-          </SkillContainer>
-
-          <SkillContainer
-            class="flex justify-center items-center bg-slate-400/50 size-14 max-w-16 max-h-16 rounded"
-          >
-            <Prisma
-              class="rounded size-10 hover:size-14 transition-all duration-500 sm:h-full md:scale-110 md:group-hover:scale-105"
-            />
-          </SkillContainer>
-
-          <SkillContainer
-            class="flex justify-center items-center bg-slate-400/50 size-14 max-w-16 max-h-16 rounded"
-          >
-            <Node
-              class="size-10 hover:size-14 transition-all duration-500 sm:h-full md:scale-110 md:group-hover:scale-105"
-            />
-          </SkillContainer>
-          <SkillContainer
-            class="flex justify-center items-center bg-slate-400/50 size-14 max-w-16 max-h-16 rounded"
-          >
-            <NestJs
-              class="size-10 hover:size-14 transition-all duration-500 sm:h-full md:scale-110 md:group-hover:scale-105"
-            />
-          </SkillContainer>
-          <SkillContainer class="flex justify-center items-center bg-slate-400/50 size-14 max-w-16 max-h-16 rounded">
-						<React class="size-10 hover:size-14 transition-all duration-500 sm:h-full md:scale-110 md:group-hover:scale-105"/>
-					</SkillContainer>
-          <SkillContainer
-            class="flex justify-center items-center bg-slate-400/50 size-14 max-w-16 max-h-16 rounded"
-          >
-            <Jest
-              class="size-10 hover:size-14 transition-all duration-500 sm:h-full md:scale-110 md:group-hover:scale-105"
-            />
-          </SkillContainer>
         </section>
 
         <section
@@ -253,7 +144,7 @@ import React from "../components/icons/technologies/React.astro";
           <p
             class="bg-gray-700/50 text-center p-4 rounded w-auto sm:text-sm md:text-base lg:text-lg rotate-1"
           >
-            Conocimientos en desarrollo web con Typescript y Node.
+            Conocimientos en desarrollo Forntend y  Backend con Typescript y Node.
           </p>
           <p
             class="bg-gray-700/50 text-center p-4 rounded w-auto sm:text-sm md:text-base lg:text-lg -rotate-2"

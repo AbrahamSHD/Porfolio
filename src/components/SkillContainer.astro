@@ -1,7 +1,19 @@
 ---
-const { class: className } = Astro.props
+import { ICONS } from '../utils/icons'
+
+// const { class: className } = Astro.props
+const iconEntries = Object.entries(ICONS);
 ---
 
-<article class={`${ className } size-32 mx-auto`}>
-    <slot/>
-</article>
+{ 
+    iconEntries.map(([key, tag]) => (
+        <div class="flex justify-center items-center bg-slate-300/50 size-14 max-w-16 max-h-16 rounded">
+            <tag.icon 
+                class={ key === "MongoDB" 
+                    ? "h-10 hover:h-14 transition-all duration-500 sm:h-90 md:scale-95 md:group-hover:scale-95"
+                    : "rounded size-10 hover:size-14 transition-all duration-500 sm:h-full md:scale-110 md:group-hover:scale-105"
+                }
+            />
+        </div>
+    ))
+}

@@ -1,29 +1,50 @@
 
 import {
+  Css,
   Express,
+  Html,
   Javascript,
   Mongo,
   NestJs,
   Node,
   Postgres,
   Prisma,
-  Typescript,
-  Vite,
   React,
   Redux,
+  Tailwind,
+  Typescript,
+  Vite,
 } from '../components'
 
 export const ICONS = {
+
+  HTML: {
+    name: "HTML",
+    class: "bg-[#fff9] text-black ",
+    icon: Html,
+  },
   
+  CSS: {
+    name: "CSS",
+    class: "bg-[#fff9] text-black ",
+    icon: Css,
+  },
+
+  TAILWIND: {
+    name: "Javascript",
+    class: "bg-[#3178C6] text-white ",
+    icon: Tailwind,
+  },
+
   JAVASCRIPT: {
     name: "Javascript",
-    class: " bg-[#f0db4f] text-black ",
+    class: "bg-[#f0db4f] text-black ",
     icon: Javascript,
   },
   
   TYPESCRIPT: {
     name: "Typescript",
-    class: " bg-[#3178C6] text-white ",
+    class: "bg-[#3178C6] text-white ",
     icon: Typescript,
   },
   
@@ -41,7 +62,7 @@ export const ICONS = {
 
   NODE: {
     name: "Node",
-    class: " bg-[#41873F] text-white ",
+    class: "bg-gradient-to-r from-[#232323] to-[#41873F] text-white ",
     icon: Node,
   },
 
@@ -53,7 +74,7 @@ export const ICONS = {
 
   POSTGRESQL: {
     name: "PostgreSQL",
-    class: " bg-[#336791] text-white ",
+    class: "bg-gradient-to-r from-[#3178C6] to-[#336791] text-white ",
     icon: Postgres,
   },
 
@@ -64,7 +85,7 @@ export const ICONS = {
   },
   REACT: {
     name: "React",
-    class: "bg-[#008fbd] text-white",
+    class: "bg-gradient-to-r from-[#3178C6] to-[#00D8FF] text-black",
     icon: React,
   },
   REDUX: {
@@ -72,7 +93,7 @@ export const ICONS = {
     class: "bg-gradient-to-r from-white to-purple-600 text-black",
     icon: Redux,
   },
-  
+
   VITE: {
     name: "Vite",
     class: " bg-gradient-to-r from-purple-500 to-blue-500 text-white ",

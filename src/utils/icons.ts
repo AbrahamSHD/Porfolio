@@ -1,6 +1,7 @@
 
 import {
   Angular,
+  CSharp,
   Css,
   Express,
   Html,
@@ -53,6 +54,13 @@ export const ICONS = {
     class: "bg-[#3178C6] text-white ",
     skillClass: defaultSkillClass,
     icon: Typescript,
+  },
+
+  CSharp: {
+    name: "Typescript",
+    class: "bg-gradient-to-r from-[#232323] to-[#390091]  text-white ",
+    skillClass: defaultSkillClass,
+    icon: CSharp,
   },
   
   EXPRESS: {
@@ -115,10 +123,10 @@ export const ICONS = {
     icon: Redux,
   },
 
-  VITE: {
-    name: "Vite",
-    class: " bg-gradient-to-r from-purple-500 to-blue-500 text-white ",
-    skillClass: defaultSkillClass,
-    icon: Vite,
-  },
+  // VITE: {
+  //   name: "Vite",
+  //   class: " bg-gradient-to-r from-purple-500 to-blue-500 text-white ",
+  //   skillClass: defaultSkillClass,
+  //   icon: Vite,
+  // },
 };

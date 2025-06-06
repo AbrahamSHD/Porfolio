@@ -1,5 +1,6 @@
 
 export { default as Angular } from "./Angular.astro";
+export { default as CSharp } from "./CSharp.astro";
 export { default as Css } from "./Css.astro";
 export { default as Docker } from "./Docker.astro";
 export { default as Express } from "./Express.astro";

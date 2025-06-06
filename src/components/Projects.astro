@@ -6,7 +6,7 @@ const PROJECTS = [
   {
     title: "CyberMerch",
     description:
-      "Desarrollo del backend pensado para una plataforma de comercio electrónico utilizando NestJS yPrismaORM. Implementación de control de acceso basado en roles para restringir operaciones CRUD deproductos a usuarios administradores. Integración y manejo de Swagger para la documentación de la API.",
+      "Desarrollo del backend pensado para una plataforma de comercio electrónico utilizando NestJS yPrismaORM. Implementación de control de acceso basado en roles para restringir operaciones CRUD de productos a usuarios administradores. Integración y manejo de Swagger para la documentación de la API.",
     github: "https://github.com/AbrahamSHD/CyberMerch",
       image:
       "https://www.tomray.dev/static/images/nestjs-prisma/nestjs-prisma.png",
@@ -24,16 +24,15 @@ const PROJECTS = [
   {
     title: "API Store",
     description:
-      "API Rest desarrollada utilizando Express, MongoDB y Jwt, ofrece funcionalidades esenciales como registro de productos, categorias y un sistema de autenticación de usuarios para garantizar la seguridad de la plataforma. Además, permite el almacenamiento de imágenes, envío de correos electrónicos y encriptaciónd de datos.",
+      "API Rest desarrollada utilizando Express, MongoDB y Jwt, ofrece funcionalidades esenciales como registro de productos, categorías y un sistema de autenticación de usuarios para garantizar la seguridad de la plataforma. Además, permite el almacenamiento de imágenes, envío de correos electrónicos y encriptación de datos.",
     github: "https://github.com/AbrahamSHD/User-Store",
-    image:
-      "https://www.split.io/wp-content/uploads/Blog-2160x1080-Building-a-CRUD-API-with-Node-js-and-Express-1920x960.png",
+    image: "/projects/APIStore.png",
     tags: [TAGS.EXPRESS, TAGS.NODE, TAGS.MONGODB, TAGS.TYPESCRIPT],
   },
   {
     title: "TicketFlow",
     description:
-      "Sistema de gestión de colas en tiempo real que distribuye tickets, la aplicación no tiene límite de tickets o límite de escritorios, y todo aparece a travéz de una pantalla el escritorio al que se asigna el ticket, través de websockets. Implementado con Express y TypeScript para una máxima eficiencia.",
+      "Sistema de gestión de colas en tiempo real que distribuye tickets, la aplicación no tiene límite de tickets o límite de escritorios, y todo aparece a travéz de una pantalla el escritorio al que se asigna el ticket, a travéz de websockets. Implementado con Express y TypeScript para una máxima eficiencia.",
     github: "https://github.com/AbrahamSHD/ticket-app",
     image: "/projects/TicketFlow.jpg",
     tags: [TAGS.HTML, TAGS.CSS, TAGS.TYPESCRIPT, TAGS.NODE, TAGS.EXPRESS],
@@ -48,7 +47,7 @@ const PROJECTS = [
         <div class="w-full md:w-1/2">
           <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
             <img
-              alt="Imágen del proyecto"
+              alt="Imagen del proyecto"
               class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105"
               loading="lazy"
               src={image}

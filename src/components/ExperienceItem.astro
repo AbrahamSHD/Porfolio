@@ -1,0 +1,52 @@
+---
+
+interface Props {
+  title: string;
+  company: string;
+  description: string;
+  date: string;
+  tags: any[];
+}
+
+const { title, company, description, date, tags } = Astro.props;
+const iconTags = Object.entries(tags);
+---
+
+<li class="relative pl-12 pb-2">
+  <!-- Línea vertical -->
+  <span class="absolute left-[22px] top-0 h-full w-0.5 bg-gray-300 dark:bg-gray-700"></span>
+
+  <!-- Imagen o ícono -->
+  <span class="absolute left-2 top-0 z-10 flex items-center justify-center w-8 h-8 bg-indigo dark:bg-indigo-900 rounded-full ring-4 ring-indigo dark:ring-gray-900 overflow-hidden">
+    <!-- Puedes poner una imagen o SVG aquí -->
+    <svg class="w-2.5 h-2.5 text-white-800 dark:white-indigo-300" aria-hidden="true"  xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z"/>
+    </svg>
+  </span>
+
+  <div class="relative flex flex-col gap-2 pb-4 text-gray-600 dark:text-gray-300 md:col-span-3">
+    <!-- Contenido -->
+    <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
+      { title } - { company }
+    </h3>
+    <time class="block mb-1 text-sm text-gray-500 dark:text-gray-400">
+      { date }
+    </time>
+    <ol class="flex flex-row gap-4">
+      {tags.map((tag) => (
+        <li>
+          <span
+            class={`flex gap-x-2 rounded-full text-sm ${tag.class} py-1 px-4 `}
+          >
+            <tag.icon class="size-5" />
+            {tag.name}
+          </span>
+        </li>
+      ))}
+    </ol>
+    <p class="text-base text-gray-600 dark:text-gray-300">
+      { description }
+    </p>
+  </div>
+</li>
+

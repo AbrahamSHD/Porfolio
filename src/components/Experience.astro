@@ -1,0 +1,24 @@
+---
+import ExperienceItem from "./ExperienceItem.astro"
+import { ICONS as TAGS } from "../utils/icons";
+
+const EXPERIENCE = [
+  {
+    date: "Actualmente...",
+    title: "Desarrollador Web Jr",
+    company: "Nomitek",
+    description:
+      "He trabajado en el mantenimiento y creación de componentes para un portal empresarial con Angular y C#. También participé en la migración de un sistema de Ruby a C#, que procesa archivos PDF, genera y sube CSVs por FTP. Además, colaboré en el desarrollo de un demonio en C# que realiza consultas a bases de datos, peticiones HTTP y envía correos automáticos...",
+    tags: [TAGS.ANGULAR, TAGS.CSHARP],
+  },
+
+]
+---
+
+<ol class="flex flex-col gap-12 relative">
+  {
+    EXPERIENCE.map((experience) => (
+      <ExperienceItem {...experience} />
+    ))
+  }
+</ol>

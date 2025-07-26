@@ -56,9 +56,9 @@ export const ICONS = {
     icon: Typescript,
   },
 
-  CSharp: {
-    name: "Typescript",
-    class: "bg-gradient-to-r from-[#232323] to-[#390091]  text-white ",
+  CSHARP: {
+    name: "CSharp",
+    class: "bg-gradient-to-r from-[#fff5] to-[#390091]  text-white ",
     skillClass: defaultSkillClass,
     icon: CSharp,
   },
@@ -106,7 +106,7 @@ export const ICONS = {
   },
   ANGULAR: {
     name: "Angular",
-    class: "bg-gradient-to-r from-[#232323] to-[#DC087D] text-white fill-current",
+    class: "bg-gradient-to-r from-[#fff7] to-[#DC087D] text-white fill-current",
     skillClass: "size-10 hover:size-14 duration-500 sm:h-90 md:scale-95 md:group-hover:scale-95",
     icon: Angular,
   },

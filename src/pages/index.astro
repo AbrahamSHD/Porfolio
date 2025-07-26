@@ -2,17 +2,19 @@
 import Layout from "../layouts/Layout.astro";
 
 import { 
-  SectionContainer, 
-  SkillContainer, 
-  Projects, 
-  CodeIcon, 
+  CodeIcon,
+  ExperienceIcon,
   GitHub, 
   LinkedIn, 
   Mail, 
-  Tools, 
-  User, 
+  Projects, 
+  SectionContainer, 
+  SkillContainer, 
   SocialPill,
+  Tools, 
+  User,
 } from '../components'
+import Experience from "../components/Experience.astro";
 
 ---
 
@@ -33,7 +35,7 @@ import {
       >
         Hey, soy AbrahamHC
       </h1>
-      <h2 class="text-xl text-wrap opacity-80 mb-8 max-w-[700px]">
+      <h2 class="text-xl text-pretty text-gray-400 dark:text-gray-400 mb-8 max-w-[700px]">
         <span class="text-yellow-400 font-bold">Desarrollador Web</span> de México.
         Comprometido en mejorar mis habilidades de programación día a día, me encanta
         trabajar en proyectos prácticos para aplicar lo que aprendo.
@@ -57,6 +59,15 @@ import {
       </nav>
     </SectionContainer>
 
+    <SectionContainer id="experiencia">
+        <h2 class="text-2xl font-semibold mb-6 flex gap-x-3 items-center">
+        <ExperienceIcon class="size-7" />
+        Experiencia Laboral
+      </h2>
+
+      <Experience/>
+    </SectionContainer>
+
     <SectionContainer id="proyectos">
       <h2 class="text-2xl font-semibold mb-6 flex gap-x-3 items-center">
         <CodeIcon class="size-7" />
@@ -76,28 +87,13 @@ import {
           Sobre mí
         </h2>
 
-        <p class="text-pretty text-gray-600 dark:text-gray-300">
-          Soy Abraham y empecé en la programación hace 2 años en la universidad, aprendiendo lo básico de desarrollo web.<strong class="text-amber-400">
-            Actualmente estoy creciendo de manera autodidacta, creando proyectos en solitario desde el Frontend hasta el Backend.</strong
-          >
-        </p>
-        <p class="text-pretty text-gray-600 dark:text-gray-300">
-          Mis habilidades las he desarrollado haciendo páginas como proyectos
-          personales. <strong class="text-amber-400"
-            >Aunque no he tenido proyectos por los que haya obtenido
-            remuneración sigo creciendo como programador a travéz de cursos y
-            actividades</strong
-          >
-        </p>
-        <p class="text-pretty text-gray-600 dark:text-gray-300">
-          Estoy comprometido con la excelencia en todo lo que hago, buscando
-          constantemente mejorar y superar los desafíos que se presenten en el
-          camino hacia la realización de mi visión.<strong
-            class="text-amber-400"
-          >
-            Mi objetivo como programador es utilizar mi pasión por la tecnología
-            para crear un impacto positivo en el mundo.</strong
-          >
+        <p class="text-gray-300 dark:text-gray-300 text-base">
+          Soy Abraham, <strong class="text-white">desarrollador web con experiencia profesional</strong> en el desarrollo y mantenimiento de aplicaciones tanto en el frontend como en el backend. Comencé en la programación hace 2 años durante mis estudios universitarios, y desde entonces he complementado mi formación de manera <strong class="text-white">autodidacta</strong>, creando <strong class="text-white">proyectos personales</strong> y enfrentando <strong class="text-white">desafíos reales en entornos profesionales</strong>.<br>
+
+          A lo largo de mi carrera he trabajado en el desarrollo de soluciones que van desde 
+          <strong class="text-white">interfaces en Angular</strong> hasta <strong class="text-white">servicios backend en C# y .NET</strong>. Me apasiona <strong class="text-white">comprender a fondo cómo funciona el software</strong> y encontrar <strong class="text-white">soluciones eficientes a problemas complejos</strong>.<br>
+
+          Me considero una persona <strong class="text-white">comprometida con la calidad</strong>, la mejora continua y el aprendizaje constante. Mi objetivo como programador es <strong class="text-white">aprovechar la tecnología para crear productos útiles, funcionales y que generen un impacto positivo</strong>.
         </p>
       </section>
 

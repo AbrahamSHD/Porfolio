@@ -23,12 +23,12 @@ const { title, company, description, date, tags } = Astro.props;
     </svg>
   </span>
 
-  <div class="relative flex flex-col gap-2 pb-4 text-gray-600 dark:text-gray-300 md:col-span-3">
+  <div class="relative flex flex-col gap-2 pb-4 text-gray-400 dark:text-gray-300 md:col-span-3">
     <!-- Contenido -->
-    <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
+    <h3 class="text-lg font-semibold text-gray-400 dark:text-white">
       { title } - { company }
     </h3>
-    <time class="block mb-1 text-sm text-gray-500 dark:text-gray-400">
+    <time class="block mb-1 text-sm text-gray-400 dark:text-gray-400">
       { date }
     </time>
     <ol class="flex flex-row gap-4">
@@ -43,7 +43,7 @@ const { title, company, description, date, tags } = Astro.props;
         </li>
       ))}
     </ol>
-    <p class="text-base text-gray-600 dark:text-gray-300">
+    <p class="text-base text-gray-400 dark:text-gray-300">
       { description }
     </p>
   </div>

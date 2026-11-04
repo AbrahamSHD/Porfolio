@@ -1,16 +1,47 @@
 ---
 import ExperienceItem from "./ExperienceItem.astro"
-import { ICONS as TAGS } from "../utils/icons";
+import { ICONS as TAGS, EXPERIENCE_TAGS as STACK } from "../utils/icons";
 
 const EXPERIENCE = [
   {
-    date: "2024 - Actualidad...",
+    date: "Oct 2025 – Oct 2026",
+    title: "Programador Jr",
+    company: "DSG Corp",
+    tags: [
+      STACK.VBNET,
+      STACK.DOTNET_FRAMEWORK,
+      STACK.ASPNET_MVC,
+      STACK.SQLSERVER,
+      STACK.ORACLE,
+      STACK.JQUERY,
+      STACK.AJAX,
+    ],
+    achievements: [
+      "Rediseñé el flujo de exportación y reportes usando streaming (IDataReader, StringBuilder). Los tiempos de respuesta bajaron ~65% y desaparecieron los errores de timeout y OutOfMemoryException. El sistema ahora procesa más de 250,000 registros y archivos de más de 65 MB.",
+      "Resolví más de 30 incidencias críticas en producción. Encontré la causa raíz en consultas SQL y controladores ASP.NET MVC, sin comprometer la integridad de los datos transaccionales.",
+      "Refactoricé consultas complejas (subconsultas, funciones analíticas, agregaciones) sobre tablas de más de 500,000 registros, lo que redujo la carga de I/O y los tiempos de bloqueo.",
+      "Automaticé reportes parametrizados con flujos asíncronos (AJAX/jQuery) para más de 50 usuarios internos. Así bajaron las solicitudes de extracción manual y el retrabajo.",
+      "Presentaba cada desarrollo directamente a los usuarios finales y lo probaba con ellos antes de liberarlo.",
+    ],
+  },
+  {
+    date: "Sep 2024 – Sep 2025",
     title: "Desarrollador Web Jr",
-    company: "Nomitek SA. de CV.",
-    description:
-      "He trabajado en el mantenimiento y creación de componentes para el portal empresarial con Angular y C#. También participé en la migración de un sistema de Ruby a C#, que procesa información de archivos PDF, genera y sube CSVs por FTP. Además, colaboré en el desarrollo de varias aplicaciones tipo demonio en C# que llegan a realizar consultas a bases de datos, peticiones HTTP y envío de correos automáticos...",
-    tags: [TAGS.ANGULAR, TAGS.CSHARP],
-  }
+    company: "Nomitek SA de CV",
+    tags: [
+      TAGS.CSHARP,
+      STACK.DOTNET,
+      TAGS.ANGULAR,
+      STACK.SQL,
+      STACK.FTP,
+      STACK.SMTP,
+    ],
+    achievements: [
+      "Participé en la migración de un sistema de Ruby a C#. El sistema procesa archivos PDF, genera CSV y los sube por FTP.",
+      "Colaboré en varias aplicaciones demonio (procesos en segundo plano) en C#, con consultas a base de datos, peticiones HTTP y envío automático de correos.",
+      "Mantuve y desarrollé componentes del portal de la empresa con Angular en el frontend y C# en el backend.",
+    ],
+  },
 ]
 ---
 

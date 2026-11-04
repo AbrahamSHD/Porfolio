@@ -3,12 +3,12 @@
 interface Props {
   title: string;
   company: string;
-  description: string;
+  achievements: string[];
   date: string;
-  tags: any[];
+  tags: { name: string; class: string; icon?: any }[];
 }
 
-const { title, company, description, date, tags } = Astro.props;
+const { title, company, achievements, date, tags } = Astro.props;
 ---
 
 <li class="relative pl-12 pb-2">
@@ -31,21 +31,23 @@ const { title, company, description, date, tags } = Astro.props;
     <time class="block mb-1 text-sm text-gray-400 dark:text-gray-400">
       { date }
     </time>
-    <ol class="flex flex-row gap-4">
+    <ol class="flex flex-row flex-wrap gap-2">
       {tags.map((tag) => (
         <li>
           <span
             class={`flex gap-x-2 rounded-full text-sm ${tag.class} py-1 px-4 `}
           >
-            <tag.icon class="size-5" />
+            {tag.icon && <tag.icon class="size-5" />}
             {tag.name}
           </span>
         </li>
       ))}
     </ol>
-    <p class="text-base text-gray-400 dark:text-gray-300">
-      { description }
-    </p>
+    <ul class="flex flex-col gap-2 list-disc pl-5 text-base text-gray-400 dark:text-gray-300">
+      {achievements.map((achievement) => (
+        <li>{achievement}</li>
+      ))}
+    </ul>
   </div>
 </li>
 

@@ -1,16 +1,34 @@
 ---
-import { ICONS } from '../utils/icons'
+import { defaultSkillClass } from '../utils/icons'
 
-// const { class: className } = Astro.props
-const iconEntries = Object.entries(ICONS);
+interface Skill {
+  name: string;
+  icon?: any;
+  skillClass?: string;
+}
+
+interface Props {
+  skills: Skill[];
+}
+
+const { skills } = Astro.props;
 ---
 
-{ 
-    iconEntries.map(([key, tag]) => (
-        <picture class="flex justify-center items-center bg-slate-300/50 size-14 max-w-16 max-h-16 rounded">
-            <tag.icon 
-                class={ tag.skillClass }
-            />
-        </picture>
-    ))
+{
+  skills.map((skill) => (
+    <figure class="flex flex-col items-center gap-1 w-16">
+      <picture class="flex justify-center items-center bg-slate-300/50 size-14 max-w-16 max-h-16 rounded">
+        {skill.icon ? (
+          <skill.icon class={skill.skillClass ?? defaultSkillClass} />
+        ) : (
+          <span class="text-xs font-bold text-white text-center leading-tight px-1">
+            {skill.name}
+          </span>
+        )}
+      </picture>
+      <figcaption class="text-xs text-gray-400 text-center leading-tight">
+        {skill.name}
+      </figcaption>
+    </figure>
+  ))
 }

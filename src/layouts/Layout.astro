@@ -7,10 +7,16 @@ interface Props {
 }
 
 const { title, description } = Astro.props;
+
+// Absolute URLs are required by link previews. Set `site` in astro.config.mjs
+// to the deployed domain so these point to production instead of the dev host.
+const baseUrl = Astro.site ?? Astro.url;
+const canonicalUrl = new URL(Astro.url.pathname, baseUrl).href;
+const ogImage = new URL("/AbrahamPhoto.jpg", baseUrl).href;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="es">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="description" content={description} />
@@ -18,6 +24,18 @@ const { title, description } = Astro.props;
 		 <link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
+		<link rel="canonical" href={canonicalUrl} />
+
+		<meta property="og:type" content="website" />
+		<meta property="og:locale" content="es_MX" />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:url" content={canonicalUrl} />
+		<meta property="og:image" content={ogImage} />
+		<meta name="twitter:card" content="summary" />
+		<meta name="twitter:title" content={title} />
+		<meta name="twitter:description" content={description} />
+		<meta name="twitter:image" content={ogImage} />
 	</head>
 	<body class="relative">
 		<div class="absolute top-0 bottom-0 z-[-2] min-h-screen w-full bg-gray-50 [background:radial-gradient(125%_125%_at_50%_10%,#000_40%,#63e_100%)]"></div>

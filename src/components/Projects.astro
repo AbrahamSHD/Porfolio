@@ -5,17 +5,21 @@ import { ICONS as TAGS } from "../utils/icons";
 const PROJECTS = [
   {
     title: "CyberMerch",
-    description:
-      "Desarrollo del backend pensado para una plataforma de comercio electrónico utilizando NestJS yPrismaORM. Implementación de control de acceso basado en roles para restringir operaciones CRUD de productos a usuarios administradores. Integración y manejo de Swagger para la documentación de la API.",
+    highlights: [
+      "Backend para una plataforma de comercio electrónico con NestJS, Prisma ORM y PostgreSQL.",
+      "Control de acceso basado en roles: solo los administradores pueden crear, editar o eliminar productos.",
+      "Documentación de la API con Swagger.",
+    ],
     github: "https://github.com/AbrahamSHD/CyberMerch",
-      image:
-      "https://www.tomray.dev/static/images/nestjs-prisma/nestjs-prisma.png",
     tags: [TAGS.TYPESCRIPT, TAGS.NESTJS, TAGS.NODE, TAGS.POSTGRESQL, TAGS.PRISMA],
   },
   {
     title: "JournalApp - App de notas con React",
-    description:
-      "Es una aplicación construida con React y Redux que permite a los usuarios crear, editar y eliminar notas personales. Las notas se almacenan en Firebase. La aplicación incluye un sistema de autenticación para registrar y gestionar usuarios nuevos. Además, JournalApp se integra con Cloudinary para permitir la carga de archivos multimedia, como imágenes, que pueden ser adjuntadas a las notas.",
+    highlights: [
+      "Aplicación de notas con React y Redux para crear, editar y eliminar notas.",
+      "Autenticación de usuarios y almacenamiento de las notas en Firebase.",
+      "Carga de imágenes adjuntas a las notas con Cloudinary.",
+    ],
     link: "https://journal-app-ahc.netlify.app/",
     github: "https://github.com/AbrahamSHD/JournalApp",
     image: "/projects/JournalApp.jpeg",
@@ -23,16 +27,22 @@ const PROJECTS = [
   },
   {
     title: "API Store",
-    description:
-      "API Rest desarrollada utilizando Express, MongoDB y Jwt, ofrece funcionalidades esenciales como registro de productos, categorías y un sistema de autenticación de usuarios para garantizar la seguridad de la plataforma. Además, permite el almacenamiento de imágenes, envío de correos electrónicos y encriptación de datos.",
+    highlights: [
+      "API REST con Express, MongoDB y TypeScript para gestionar productos y categorías.",
+      "Autenticación con JWT y encriptación de datos.",
+      "Almacenamiento de imágenes y envío de correos electrónicos.",
+    ],
     github: "https://github.com/AbrahamSHD/User-Store",
     image: "/projects/APIStore.png",
     tags: [TAGS.EXPRESS, TAGS.NODE, TAGS.MONGODB, TAGS.TYPESCRIPT],
   },
   {
     title: "TicketFlow",
-    description:
-      "Sistema de gestión de colas en tiempo real que distribuye tickets, la aplicación no tiene límite de tickets o límite de escritorios, y todo aparece a travéz de una pantalla el escritorio al que se asigna el ticket, a travéz de websockets. Implementado con Express y TypeScript para una máxima eficiencia.",
+    highlights: [
+      "Sistema de gestión de colas en tiempo real, sin límite de tickets ni de escritorios.",
+      "Una pantalla muestra, mediante WebSockets, el escritorio al que se asigna cada ticket.",
+      "Desarrollado con Express y TypeScript.",
+    ],
     github: "https://github.com/AbrahamSHD/ticket-app",
     image: "/projects/TicketFlow.jpg",
     tags: [TAGS.HTML, TAGS.CSS, TAGS.TYPESCRIPT, TAGS.NODE, TAGS.EXPRESS],
@@ -42,16 +52,25 @@ const PROJECTS = [
 
 <div class="flex flex-col gap-y-16">
   {
-    PROJECTS.map(({ image, title, description, tags, link, github }) => (
+    PROJECTS.map(({ image, title, highlights, tags, link, github }) => (
       <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
         <div class="w-full md:w-1/2">
           <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
-            <img
-              alt="Imagen del proyecto"
-              class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105"
-              loading="lazy"
-              src={image}
-            />
+            {image ? (
+              <img
+                alt={`Captura del proyecto ${title}`}
+                class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105"
+                loading="lazy"
+                src={image}
+              />
+            ) : (
+              <div class="flex flex-col items-center justify-center gap-4 w-full h-56 md:h-64 bg-gradient-to-br from-[#232323] via-[#3b0a2a] to-[#e0234e]">
+                <span class="text-3xl font-bold text-white">{title}</span>
+                <div class="flex gap-3">
+                  {tags.map((tag) => <tag.icon class="size-8" />)}
+                </div>
+              </div>
+            )}
           </div>
         </div>
 
@@ -73,9 +92,11 @@ const PROJECTS = [
               ))}
             </ul>
 
-            <div class="mt-2 text-gray-400">
-              {description}
-            </div>
+            <ul class="mt-2 flex flex-col gap-1 list-disc pl-5 text-gray-400">
+              {highlights.map((highlight) => (
+                <li>{highlight}</li>
+              ))}
+            </ul>
             <footer class="flex items-end justify-start mt-4 gap-x-4">
               {github && (
                 <LinkButton href={github}>

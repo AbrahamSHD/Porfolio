@@ -15,31 +15,88 @@ import {
   User,
 } from '../components'
 import Experience from "../components/Experience.astro";
+import { ICONS as TAGS, EXPERIENCE_TAGS as STACK } from "../utils/icons";
+import { existsSync } from "node:fs";
+
+// The download button only renders once the PDF is placed at public/cv.pdf.
+const hasCv = existsSync(new URL("../../public/cv.pdf", import.meta.url));
+
+// Bento grid cells, in reading order. On md+ the grid has 3 columns:
+// skill cards span 2, stat cards span 1, alternating sides row by row.
+const SKILLS_BENTO = [
+  {
+    kind: "skills",
+    title: "Backend",
+    subtitle: "Aplicaciones empresariales y APIs",
+    span: "md:col-span-2",
+    accent: "from-[#512BD4]/30 hover:border-[#512BD4]/60",
+    bar: "bg-[#512BD4]",
+    skills: [STACK.DOTNET, TAGS.CSHARP, STACK.VBNET, STACK.ASPNET_MVC, TAGS.NODE, TAGS.NESTJS, TAGS.EXPRESS],
+  },
+  {
+    kind: "stat",
+    value: "~65%",
+    label: "menos tiempo de respuesta en exportación de reportes",
+    gradient: "from-[#9780E5] to-[#512BD4]",
+  },
+  {
+    kind: "stat",
+    value: "500k+",
+    label: "registros por tabla en consultas SQL optimizadas",
+    gradient: "from-[#ff8a80] to-[#CC2927]",
+  },
+  {
+    kind: "skills",
+    title: "Bases de datos",
+    subtitle: "Consultas, optimización e integridad de datos",
+    span: "md:col-span-2",
+    accent: "from-[#CC2927]/30 hover:border-[#CC2927]/60",
+    bar: "bg-[#CC2927]",
+    skills: [STACK.SQLSERVER, STACK.ORACLE, TAGS.POSTGRESQL, TAGS.MONGODB, TAGS.PRISMA],
+  },
+  {
+    kind: "skills",
+    title: "Frontend",
+    subtitle: "Interfaces y flujos asíncronos",
+    span: "md:col-span-2",
+    accent: "from-[#DC087D]/30 hover:border-[#DC087D]/60",
+    bar: "bg-[#DC087D]",
+    skills: [TAGS.ANGULAR, TAGS.TYPESCRIPT, TAGS.JAVASCRIPT, STACK.JQUERY, TAGS.REACT, TAGS.REDUX, TAGS.HTML, TAGS.CSS, TAGS.TAILWIND],
+  },
+  {
+    kind: "stat",
+    value: "30+",
+    label: "incidencias críticas resueltas en producción",
+    gradient: "from-[#ff9ccf] to-[#DC087D]",
+  },
+];
 
 ---
 
 <Layout
-  title="Portfolio AbrahamHC - Desarrollador y Programador Web"
-  description="AbrahamHC es un apasionado desarrollador web con 1 año de experiencia en la creación de sitios web modernos, eficientes y atractivos. Cuenta con una amplia gama de tecnologías, incluyendo HTML, CSS, Tailwind, JavaScript, Typescript Node js, MongoDB, PostgreSQl y Nest js."
+  title="Abraham Hernández - Desarrollador .NET"
+  description="Desarrollador .NET de México con 2 años de experiencia en C#, VB.NET, ASP.NET MVC, SQL Server y Oracle. Optimización de consultas, reportes de alto volumen y resolución de incidencias en producción."
 >
   <main class="max-w-full">
     <SectionContainer class="py-44 pb-24 justify-center items-center">
       <img
         class="size-16 lg:size-20 p-1 mb-4 rounded-full ring-2 ring-red-600"
         src="/AbrahamPhoto.jpg"
-        alt="AbrahamHC photo"
+        alt="Foto de perfil de Abraham"
       />
 
       <h1
         class="text-white text-3xl md:text-4xl lg:text-5xl font-bold flex flex-row gap-x-4 pb-6 lg:pb-10"
       >
-        Hey, soy AbrahamHC
+        Hey, soy Abraham Hernández
       </h1>
-      <h2 class="text-xl text-pretty text-gray-400 dark:text-gray-400 mb-8 max-w-[700px]">
-        <span class="text-yellow-400 font-bold">Desarrollador Web</span> de México.
-        Comprometido en mejorar mis habilidades de programación día a día, me encanta
-        trabajar en proyectos prácticos para aplicar lo que aprendo.
-      </h2>
+      <p class="text-xl text-pretty text-gray-400 dark:text-gray-400 mb-8 max-w-[700px]">
+        <span class="text-yellow-400 font-bold">Desarrollador .NET</span> de México con
+        2 años de experiencia en C#, VB.NET, ASP.NET MVC, SQL Server y Oracle.
+        Rediseñé el flujo de reportes de un sistema empresarial y
+        <strong class="text-white">reduje ~65% sus tiempos de respuesta</strong> procesando
+        más de 250,000 registros.
+      </p>
 
       <nav class="flex gap-4 flex-wrap">
         <SocialPill
@@ -56,6 +113,11 @@ import Experience from "../components/Experience.astro";
           <Mail class="size-6" />
           hernandez.c.abraham.00@gmail.com
         </SocialPill>
+        {hasCv && (
+          <SocialPill href="/cv.pdf" download="CV-Abraham-Hernandez.pdf">
+            Descargar CV
+          </SocialPill>
+        )}
       </nav>
     </SectionContainer>
 
@@ -87,14 +149,22 @@ import Experience from "../components/Experience.astro";
           Sobre mí
         </h2>
 
-        <p class="text-gray-300 dark:text-gray-300 text-base">
-          Soy Abraham, <strong class="text-white">desarrollador web con experiencia profesional</strong> en el desarrollo y mantenimiento de aplicaciones tanto en el frontend como en el backend. Comencé en la programación hace 2 años durante mis estudios universitarios, y desde entonces he complementado mi formación de manera <strong class="text-white">autodidacta</strong>, creando <strong class="text-white">proyectos personales</strong> y enfrentando <strong class="text-white">desafíos reales en entornos profesionales</strong>.<br>
-
-          A lo largo de mi carrera he trabajado en el desarrollo de soluciones que van desde 
-          <strong class="text-white">interfaces en Angular</strong> hasta <strong class="text-white">servicios backend en C# y .NET</strong>. Me apasiona <strong class="text-white">comprender a fondo cómo funciona el software</strong> y encontrar <strong class="text-white">soluciones eficientes a problemas complejos</strong>.<br>
-
-          Me considero una persona <strong class="text-white">comprometida con la calidad</strong>, la mejora continua y el aprendizaje constante. Mi objetivo como programador es <strong class="text-white">aprovechar la tecnología para crear productos útiles, funcionales y que generen un impacto positivo</strong>.
-        </p>
+        <div class="flex flex-col gap-4 text-gray-300 dark:text-gray-300 text-base">
+          <p>
+            Soy Abraham, <strong class="text-white">desarrollador .NET con 2 años de experiencia profesional</strong>
+            construyendo y manteniendo aplicaciones empresariales con <strong class="text-white">C#, VB.NET, ASP.NET MVC, SQL Server y Oracle</strong>.
+            También he desarrollado interfaces con <strong class="text-white">Angular</strong>.
+          </p>
+          <p>
+            Me especializo en <strong class="text-white">encontrar la causa raíz de los problemas</strong>: desde consultas SQL lentas
+            sobre cientos de miles de registros hasta incidencias en producción que afectan a usuarios reales.
+            Me apasiona <strong class="text-white">comprender a fondo cómo funciona el software</strong> antes de cambiarlo.
+          </p>
+          <p>
+            Trabajo de cerca con los usuarios finales: presento y pruebo cada desarrollo con ellos antes de liberarlo.
+            Me considero una persona <strong class="text-white">comprometida con la calidad</strong>, la mejora continua y el aprendizaje constante.
+          </p>
+        </div>
       </section>
 
       <img
@@ -104,49 +174,46 @@ import Experience from "../components/Experience.astro";
       />
     </SectionContainer>
 
-    <SectionContainer
-      id="skills"
-      class="box-border flex flex-col sm:flex-col md:flex-col lg:flex-col sm:h-40 md:h-64 sm:mb-32"
-    >
-      <section class="mar">
-        <h2
-          class="w-full text-2xl font-semibold mb-6 flex gap-x-3 items-center"
-        >
-          <Tools class="size-7" />
-          Skills
-        </h2>
-      </section>
+    <SectionContainer id="skills">
+      <h2 class="w-full text-2xl font-semibold mb-6 flex gap-x-3 items-center">
+        <Tools class="size-7" />
+        Skills
+      </h2>
 
-      <SectionContainer
-        class="flex flex-col sm:flex-row md:flex-row lg:flex-row justify-center gap-6"
-      >
-        <section
-          class="flex flex-wrap gap-4 justify-evenly sm:w-[50%] md:w-[50%] lg:w-[50%]"
-        >
-          <SkillContainer />
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        {SKILLS_BENTO.map((cell) =>
+          cell.kind === "skills" ? (
+            <section
+              class={`relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br ${cell.accent} to-white/5 p-6 transition duration-300 hover:-translate-y-1 hover:shadow-2xl ${cell.span}`}
+            >
+              <span class={`absolute left-0 top-0 h-1 w-full ${cell.bar}`}></span>
+              <header class="mb-5 flex items-baseline justify-between gap-4">
+                <div>
+                  <h3 class="text-xl font-semibold text-white">{cell.title}</h3>
+                  <p class="text-sm text-gray-400">{cell.subtitle}</p>
+                </div>
+                <span class="shrink-0 rounded-full bg-white/10 px-3 py-1 text-xs text-gray-300">
+                  {cell.skills?.length} tecnologías
+                </span>
+              </header>
+              <div class="flex flex-wrap gap-4">
+                <SkillContainer skills={cell.skills ?? []} />
+              </div>
+            </section>
+          ) : (
+            <article class="flex flex-col justify-center gap-2 rounded-2xl border border-white/10 bg-white/5 p-6 transition duration-300 hover:-translate-y-1 hover:bg-white/10">
+              <span class={`bg-gradient-to-r ${cell.gradient} bg-clip-text text-5xl font-extrabold text-transparent`}>
+                {cell.value}
+              </span>
+              <p class="text-sm text-gray-300">{cell.label}</p>
+            </article>
+          )
+        )}
+      </div>
 
-        </section>
-
-        <section
-          class="sm:ml-4 md:ml-4 lg:ml-4 flex flex-col gap-6 w-full sm:w-[50%] md:w-[50%] lg:w-[50%]"
-        >
-          <p
-            class="bg-gray-700/50 text-center p-4 rounded w-auto sm:text-sm md:text-base lg:text-lg rotate-1"
-          >
-            Conocimientos en desarrollo Forntend y  Backend con Typescript y Node.
-          </p>
-          <p
-            class="bg-gray-700/50 text-center p-4 rounded w-auto sm:text-sm md:text-base lg:text-lg -rotate-2"
-          >
-            Experiencia en diseño responsivo.
-          </p>
-          <p
-            class="bg-gray-700/50 text-center p-4 rounded w-auto sm:text-sm md:text-base lg:text-lg rotate-1"
-          >
-            Gestión eficaz de versiones y colaboración con Git y GitHub.
-          </p>
-        </section>
-      </SectionContainer>
+      <p class="mt-6 text-center text-sm text-gray-400">
+        Además: control de versiones y colaboración con <strong class="text-gray-200">Git y GitHub</strong>.
+      </p>
     </SectionContainer>
   </main>
 </Layout>
